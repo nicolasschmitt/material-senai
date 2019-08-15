@@ -12,6 +12,8 @@ export class DataBindingComponent implements OnInit {
   valorArmazenado: string = "";
   valorAtual: string = "";
   isMouseOver: boolean = false;
+  showMessage: boolean = false;
+  classe: string = "alert alert-danger";
 
   constructor() { }
 
@@ -32,6 +34,14 @@ export class DataBindingComponent implements OnInit {
 
   onMouseOut(){
     this.isMouseOver = false;
+  }
+
+  changeShowMessage(){
+    this.showMessage = !this.showMessage;
+  }
+
+  onEnter(valor: string){
+    this.classe = valor;
   }
 
 }

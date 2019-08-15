@@ -4,19 +4,15 @@
 <p> 1 + 1 = {{1+1}}</p>
 
 
-
-
 <h1> Property Binding </h1>
 <img bind-src="urlimagem" >
 <img [src]="urlimagem">
-
-
-
 
 <h1> Event binding </h1>
 <input type="text" (keyup)="onKeyUp($event)"
 (Keyup.enter) = "armazenarValor(campoInput.value)"
 (blur) = "armazenarValor(campoInput.value)"
+class="form-control"
 #campoInput>
 
 <p> Valor atual: {{valorAtual}} </p>
@@ -28,6 +24,16 @@
 <span (mouseover)="onMouseOver()"
 (mouseout)="onMouseOut()"
 [class.highLight]="isMouseOver"
->Passe Mouse </span>
+> Passe Mouse </span>
 
 <p>{{isMouseOver}}</p>
+
+<!-- Trocando a class por um input -->
+
+<input #valorCss (keyup.enter)="onEnter(valorCss.value)" placeholder="Digite a classe css aqui"> <br>
+
+<div *ngIf="showMessage" [class]="classe" role="alert">
+    CSS Trocado
+</div>
+
+<button (click)="changeShowMessage" class="btn btn-primary"> Show Message </button>
