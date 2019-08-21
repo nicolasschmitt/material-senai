@@ -21,12 +21,14 @@ export class CursoComponent implements OnInit {
   }
 
   onSubmit(formulario: NgForm){
-    console.log(formulario);
+    if(formulario.valid){
+      console.log(formulario);
 
     console.log('-------- valores do formulário')
     console.log(formulario.form.value);
 
     console.log('Valor do objeto')
     console.log(this.curso)
+    }
   }
 }

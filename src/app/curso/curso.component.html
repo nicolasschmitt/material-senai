@@ -16,7 +16,8 @@
             <label for="descricao" class="control-label"> Descrição </label>
         </div>
         <div class="col-sm-12">
-            <input type="text" nome="descricao" class="form-control" id="descricao" placeholder="Descrição">
+            <input type="text" class="form-control" nome="descricao"  id="descricao" placeholder="Descrição" required 
+            #descricao="ngModel" [(ngModel)]="curso.descricao">
         </div>
     </div>
 
@@ -30,6 +31,6 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary"> Submeter </button>
+    <button type="submit" [disabled]="f.valid" class="btn btn-primary"> Submeter </button>
 
 </form>
